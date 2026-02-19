@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from app.core.database import engine, Base
 from app.api.routes import auth
 
-from app.api.routes import products
+from app.api.routes import product
 
 
 
@@ -20,7 +20,7 @@ Base.metadata.create_all(bind=engine)
 
 
 app.include_router(auth.router)
-app.include_router(products.router)
+app.include_router(product.router)
 
 
 @app.get("/")
