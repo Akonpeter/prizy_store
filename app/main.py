@@ -3,6 +3,7 @@ from app.core.database import engine, Base
 from app.api.routes import auth
 
 from app.api.routes import product
+from app.api.routes import cart
 
 
 
@@ -21,6 +22,7 @@ Base.metadata.create_all(bind=engine)
 
 app.include_router(auth.router)
 app.include_router(product.router)
+app.include_router(cart.router)
 
 
 @app.get("/")
