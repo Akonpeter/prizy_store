@@ -4,7 +4,9 @@ from app.api.routes import auth
 
 from app.api.routes import product
 from app.api.routes import cart
+from app.api.routes import order
 
+from app.api.routes import payment
 
 
 app = FastAPI(
@@ -23,7 +25,8 @@ Base.metadata.create_all(bind=engine)
 app.include_router(auth.router)
 app.include_router(product.router)
 app.include_router(cart.router)
-
+app.include_router(order.router)
+app.include_router(payment.router)
 
 @app.get("/")
 def root():

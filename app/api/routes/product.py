@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.core.database import SessionLocal
-from app.models.product import product
+from app.models.product import Product
 from app.schemas.product import ProductCreate, ProductResponse
 from app.core.security import get_current_user, require_admin
 
